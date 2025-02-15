@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Task 1: Button that Changes Color -->
+    <h2>Task 1: Button that Changes Color</h2>
+    <button id="colorButton" onclick="changeColor()">Click Me!</button>
+
+    <!-- Task 2: Alert Box with Greeting Based on Current Time -->
+    <h2>Task 2: Alert Box with Greeting</h2>
+    <button onclick="showGreeting()">Show Greeting</button>
+
+    <!-- Task 3: Basic Calculator -->
+    <h2>Task 3: Basic Calculator</h2>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="addNumbers()">Add</button>
+    <p id="result"></p>
+
+    <script>
+        // Task 1: Function to change button color
+        function changeColor() {
+            const button = document.getElementById('colorButton');
+            const colors = ['red', 'green', 'blue', 'yellow', 'purple'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            button.style.backgroundColor = randomColor;
+        }
+
+        // Task 2: Function to show greeting based on current time
+        function showGreeting() {
+            const hour = new Date().getHours();
+            let greeting;
+            if (hour < 12) {
+                greeting = 'Good morning!';
+            } else if (hour < 18) {
+                greeting = 'Good afternoon!';
+            } else {
+                greeting = 'Good evening!';
+            }
+            alert(greeting);
+        }
+
+        // Task 3: Function to add two numbers
+        function addNumbers() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const result = num1 + num2;
+            document.getElementById('result').innerText = `Result: ${result}`;
+        }
+    </script>
+
+</body>
+</html>
